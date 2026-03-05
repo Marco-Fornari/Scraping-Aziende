@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Models"
+    "\\Models",
+    "\\Services"
   ],
-  "SelectedNode": "\\Models\\AziendaInfo.cs",
+  "SelectedNode": "\\Services\\ReportAziendaService.cs",
   "PreviewInSolutionExplorer": false
 }

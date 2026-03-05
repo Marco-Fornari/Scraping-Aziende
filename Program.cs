@@ -10,7 +10,7 @@ string connectionString = config.GetConnectionString("Base")!;
 
 var service = new ReportAziendeService(connectionString);
 
-var aziende = await service.GetAziendeFermoAsync();
+var aziende = await service.GetAziendeAsync();
 
 Console.WriteLine($"Trovate {aziende.Count} aziende");
 

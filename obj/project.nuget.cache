@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JAbqfAlpZWQ=",
+  "dgSpecHash": "qaX7kHWIDTo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\marco\\Documents\\Lavoro\\OVERSIDE SRL\\WebScraping\\ScraperAziende\\ScraperAziende.csproj",
+  "projectFilePath": "C:\\Users\\marco\\Documents\\Lavoro\\OVERSIDE SRL\\Scraping-Aziende\\ScraperAziende.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.3\\microsoft.extensions.configuration.10.0.3.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.3\\microsoft.extensions.configuration.abstractions.10.0.3.nupkg.sha512",
