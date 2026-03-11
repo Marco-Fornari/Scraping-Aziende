@@ -1,68 +1,79 @@
-Dataset builder e scraper per raccogliere informazioni sulle aziende della regione Marche dal sito:
+# Scraping Aziende Marche
+
+![C#](https://img.shields.io/badge/language-C%23-blue)
+![.NET](https://img.shields.io/badge/framework-.NET-purple)
+![Database](https://img.shields.io/badge/database-MySQL-orange)
+![Status](https://img.shields.io/badge/status-work_in_progress-yellow)
+
+Dataset builder e scraper per raccogliere informazioni sulle aziende della regione **Marche** dal sito:
 
 🔗 https://www.reportaziende.it/
 
-Il progetto recupera i dati aziendali tramite endpoint JSON pubblici e costruisce un dataset utilizzabile per analisi economiche, territoriali.
+Il progetto recupera i dati aziendali tramite **endpoint JSON pubblici** e costruisce un dataset utilizzabile per **analisi economiche e territoriali**.
 
-Obiettivo
+---
 
-Creare un database strutturato delle aziende del territorio marchigiano per:
+# Obiettivo
 
-analisi del tessuto imprenditoriale locale.
+Creare un **database strutturato delle aziende del territorio marchigiano** per:
 
-Il progetto nasce anche come attività di ricerca personale durante il percorso di studi presso ITS Smart Academy.
+- analisi del tessuto imprenditoriale locale
+- classificazione delle aziende per territorio
+- costruzione di dataset per analisi future
 
-Dataset Attuale
+Il progetto nasce come attività di **ricerca personale durante il percorso di studi presso ITS Smart Academy**.
+
+---
+
+# Dataset Attuale
 
 Province attualmente incluse:
 
-Fermo (FM)
+- **Fermo (FM)**
+- **Macerata (MC)**
 
-Macerata (MC)
-
-I dati vengono recuperati dagli endpoint JSON:
+Endpoint utilizzati:
 
 https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
 https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
-Informazioni Raccolte
+
+
+---
+
+# Informazioni Raccolte
 
 Per ogni azienda vengono estratti campi come:
 
-Company
+| Campo | Descrizione |
+|------|-------------|
+| Company | Nome azienda |
+| Place | Comune |
+| Year | Ultimo anno disponibile |
+| Revenue | Fatturato |
 
-Place
+---
 
-Year 
+# Stack Tecnologico
 
-Revenue
+- **C#**
+- **.NET**
+- **HttpClient**
+- **System.Text.Json**
+- **MySQL**
 
+---
 
-
-
-Stack Tecnologico:
-
-C#
-
-.NET
-
-HttpClient
-
-System.Text.Json
-
-MySQL
-
-Struttura del Progetto:
-
-
+# Struttura del Progetto
 Scraping-Aziende
 │
 ├── Models
-│   └── infoCompany.cs
+│ └── infoCompany.cs
 │
 ├── Services
-│   └── ReportAziendeService.cs
+│ └── ReportAziendeService.cs
 │
 ├── Database
-│   └── schema.sql
+│ └── schema.sql
 │
 └── Program.cs
+
