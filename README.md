@@ -47,8 +47,8 @@ Per ogni azienda vengono estratti campi come:
 | Campo | Descrizione |
 |------|-------------|
 | Company | Nome azienda |
-| Place | Comune |
-| Year | Ultimo anno disponibile |
+| Place | Luogo |
+| Year | Ultimo anno |
 | Revenue | Fatturato |
 
 ---
