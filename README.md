@@ -54,14 +54,14 @@ Per ogni azienda vengono estratti campi come:
 ---
 
 # Stack Tecnologico
+*Framework: .NET (C#)*
+*Database: MariaDB / MySQL*
+Librerie principali:
+- *MySqlConnector: Driver ad alte prestazioni per la connessione al database.*
+- *Microsoft.Extensions.Configuration: Per la gestione dinamica delle impostazioni tramite file JSON.*
+- *System.Text.Json: Per la serializzazione e deserializzazione dei dati.*
+- *HttpClient: Per l'integrazione con API esterne.*
 
-- **C#**
-- **.NET**
-- **HttpClient**
-- **System.Text.Json**
-- **MariaDB**
-
----
 
 # Struttura del Progetto
 Scraping-Aziende
