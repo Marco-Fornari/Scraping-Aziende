@@ -1,4 +1,4 @@
-# Scraping Aziende
+# Web Scraping Italian Companies
 
 ![C#](https://img.shields.io/badge/language-C%23-blue)
 ![.NET](https://img.shields.io/badge/framework-.NET-purple)
