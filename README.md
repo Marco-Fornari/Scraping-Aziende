@@ -33,3 +33,61 @@ Currently included provinces:
 - **Macerata (MC)**
 
 Endpoints used:
+https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
+https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
+
+
+---
+
+# Collected Data
+
+For each company, the following fields are extracted:
+
+| Field | Description |
+|------|-------------|
+| Company | Company name |
+| Place | Location |
+| Year | Latest available year |
+| Revenue | Company revenue |
+
+---
+
+# Technology Stack
+
+### Framework
+- **.NET (C#)**
+
+### Database
+- **MariaDB / MySQL**
+
+---
+
+## Main Libraries
+
+- **MySqlConnector**  
+  High-performance driver used to connect to MySQL/MariaDB databases.
+
+- **Microsoft.Extensions.Configuration**  
+  Used to dynamically manage application settings via JSON configuration files (e.g. `appsettings.json`).
+
+- **System.Text.Json**  
+  Used for JSON serialization and deserialization.
+
+- **HttpClient**  
+  Used to perform HTTP requests and integrate external APIs.
+
+---
+
+# Project Structure
+Scraping-Aziende
+│
+├── Models
+│ └── infoCompany.cs
+│
+├── Services
+│ └── ReportAziendeService.cs
+│
+├── Database
+│ └── schema.sql
+│
+└── Program.cs
