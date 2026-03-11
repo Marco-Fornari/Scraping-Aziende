@@ -54,15 +54,28 @@ Per ogni azienda vengono estratti campi come:
 ---
 
 # Stack Tecnologico
-- *Framework: .NET (C#)*
--*Database: MariaDB / MySQL*
- ---
-Librerie principali:
-- *MySqlConnector: Driver ad alte prestazioni per la connessione al database.*
-- *Microsoft.Extensions.Configuration: Per la gestione dinamica delle impostazioni tramite file JSON.*
-- *System.Text.Json: Per la serializzazione e deserializzazione dei dati.*
-- *HttpClient: Per l'integrazione con API esterne.*
 
+### Framework
+- **.NET (C#)**
+
+### Database
+- **MariaDB / MySQL**
+
+---
+
+## Librerie Principali
+
+- **MySqlConnector**  
+  Driver ad alte prestazioni per la connessione al database MySQL/MariaDB.
+
+- **Microsoft.Extensions.Configuration**  
+  Libreria utilizzata per la gestione dinamica delle configurazioni tramite file JSON (es. `appsettings.json`).
+
+- **System.Text.Json**  
+  Utilizzata per la serializzazione e deserializzazione dei dati JSON.
+
+- **HttpClient**  
+  Classe utilizzata per effettuare richieste HTTP e integrare API esterne.
 
 # Struttura del Progetto
 Scraping-Aziende
