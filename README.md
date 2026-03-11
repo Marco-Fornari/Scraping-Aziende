@@ -33,8 +33,8 @@ Currently included provinces:
 - **Macerata (MC)**
 
 Endpoints used:
-https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
-https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
 
 
 ---
