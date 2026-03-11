@@ -59,7 +59,7 @@ Per ogni azienda vengono estratti campi come:
 - **.NET**
 - **HttpClient**
 - **System.Text.Json**
-- **MySQL**
+- **MariaDB**
 
 ---
 
