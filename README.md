@@ -1,93 +1,35 @@
-# Scraping Aziende 
+# Scraping Aziende
 
 ![C#](https://img.shields.io/badge/language-C%23-blue)
 ![.NET](https://img.shields.io/badge/framework-.NET-purple)
 ![Database](https://img.shields.io/badge/database-MySQL-orange)
 ![Status](https://img.shields.io/badge/status-work_in_progress-yellow)
 
-Dataset builder e scraper per raccogliere informazioni sulle aziende della regione **Marche** dal sito:
+Dataset builder and scraper designed to collect information about companies located in the **Marche region (Italy)** from the website:
 
 🔗 https://www.reportaziende.it/
 
-Il progetto recupera i dati aziendali tramite **endpoint JSON pubblici** e costruisce un dataset utilizzabile per **analisi economiche e territoriali**.
+The project retrieves company data through **public JSON endpoints** and builds a dataset that can be used for **economic and territorial analysis**.
 
 ---
 
-# Obiettivo
+# Objective
 
-Creare un **database strutturato delle aziende del territorio marchigiano** per:
+The goal of this project is to create a **structured database of companies located in the Marche region** in order to:
 
-- analisi del tessuto imprenditoriale locale
-- classificazione delle aziende per territorio
-- costruzione di dataset per analisi future
+- analyze the local business ecosystem
+- classify companies by geographical area
+- build datasets for future analysis
 
-Il progetto nasce come attività di **ricerca personale durante il percorso di studi presso ITS Smart Academy**.
+This project was created as part of **personal research during my studies at ITS Smart Academy**.
 
 ---
 
-# Dataset Attuale
+# Current Dataset
 
-Province attualmente incluse:
+Currently included provinces:
 
 - **Fermo (FM)**
 - **Macerata (MC)**
 
-Endpoint utilizzati:
-
-https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
-https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
-
-
----
-
-# Informazioni Raccolte
-
-Per ogni azienda vengono estratti campi come:
-
-| Campo | Descrizione |
-|------|-------------|
-| Company | Nome azienda |
-| Place | Luogo |
-| Year | Ultimo anno |
-| Revenue | Fatturato |
-
----
-
-# Stack Tecnologico
-
-### Framework
-- **.NET (C#)**
-
-### Database
-- **MariaDB / MySQL**
-
----
-
-## Librerie Principali
-
-- **MySqlConnector**  
-  Driver ad alte prestazioni per la connessione al database MySQL/MariaDB.
-
-- **Microsoft.Extensions.Configuration**  
-  Libreria utilizzata per la gestione dinamica delle configurazioni tramite file JSON (es. `appsettings.json`).
-
-- **System.Text.Json**  
-  Utilizzata per la serializzazione e deserializzazione dei dati JSON.
-
-- **HttpClient**  
-  Classe utilizzata per effettuare richieste HTTP e integrare API esterne.
-
-# Struttura del Progetto
-Scraping-Aziende
-│
-├── Models
-│ └── infoCompany.cs
-│
-├── Services
-│ └── ReportAziendeService.cs
-│
-├── Database
-│ └── schema.sql
-│
-└── Program.cs
-
+Endpoints used:
