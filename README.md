@@ -29,12 +29,16 @@ This project was created as part of **personal research during my studies at ITS
 
 Currently included provinces:
 
+- **Ascoli Piceno (AP)**
 - **Fermo (FM)**
 - **Macerata (MC)**
+- **Pesaro Urbino (PU)**
 
 Endpoints used:
-- https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_ap_elenco.json
 - https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_pu_elenco.json
 
 
 ---
@@ -44,11 +48,16 @@ Endpoints used:
 For each company, the following fields are extracted:
 
 | Field | Description |
-|------|-------------|
-| Company | Company name |
-| Place | Location |
-| Year | Latest available year |
-| Revenue | Company revenue |
+| :--- | :--- |
+| **VatNumber** | VAT number (Partita IVA) |
+| **FiscalCode** | Fiscal code (Codice Fiscale) |
+| **Company** | Company name |
+| **Place** |  City |
+| **Province** | Province |
+| **AtecoCode** | ATECO classification code |
+| **AtecoDescription** | Description of the ATECO activity |
+| **Year** | Latest available year |
+| **Revenue** | Company revenue |
 
 ---
 

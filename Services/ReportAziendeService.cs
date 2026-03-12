@@ -19,14 +19,19 @@ public class ReportAziendeService
     {
         var urls = new List<string>
         {
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_ap_elenco.json",
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json",
-            "https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json"
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_pu_elenco.json",
+            
+
         };
 
         var aziende = new List<infoCompany>();
 
         foreach (var url in urls)
         {
+            var province = url.Split("mar_")[1].Substring(0, 2).ToUpper();
             var response = await _client.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
@@ -36,8 +41,17 @@ public class ReportAziendeService
             {
                 aziende.Add(new infoCompany
                 {
+                    VatNumber = item.GetProperty("vat_number").GetString() ?? "",
+                    FiscalCode = item.GetProperty("fiscal_code").GetString() ?? "",
+
                     Company = item.GetProperty("name").GetString() ?? "",
+                   
                     Place = item.GetProperty("comune").GetString() ?? "",
+                    Province = province,
+
+                    AtecoCode = item.GetProperty("aziendeAnagraficaCodiceAteco").GetString() ?? "",
+                    AtecoDescription = item.GetProperty("aziendeAnagraficaDescrizioneAteco").GetString() ?? "",
+
                     Year = int.Parse(item.GetProperty("LatestAnno").GetString() ?? "0"),
                     Revenue = decimal.Parse(item.GetProperty("LatestValore").GetString() ?? "0", System.Globalization.CultureInfo.InvariantCulture)
                 });
@@ -55,13 +69,18 @@ public class ReportAziendeService
         foreach (var azienda in aziende)
         {
             var cmd = new MySqlCommand(
-                "INSERT INTO totCompanies (company, place, year, revenue) VALUES (@a, @l, @an, @f)",
+                  "INSERT INTO totCompanies (vatNumber, fiscalCode, company, place, province, atecoCode, atecoDescription,  year, revenue) VALUES (@vat, @fiscal, @company, @place, @province, @atecoCode, @atecoDesc, @year, @revenue)",
                 conn);
 
-            cmd.Parameters.AddWithValue("@a", azienda.Company);
-            cmd.Parameters.AddWithValue("@l", azienda.Place);
-            cmd.Parameters.AddWithValue("@an", azienda.Year);
-            cmd.Parameters.AddWithValue("@f", azienda.Revenue);
+            cmd.Parameters.AddWithValue("@vat", azienda.VatNumber);
+            cmd.Parameters.AddWithValue("@fiscal", azienda.FiscalCode);
+            cmd.Parameters.AddWithValue("@company", azienda.Company);
+            cmd.Parameters.AddWithValue("@place", azienda.Place);
+            cmd.Parameters.AddWithValue("@province", azienda.Province);
+            cmd.Parameters.AddWithValue("@atecoCode", azienda.AtecoCode);
+            cmd.Parameters.AddWithValue("@atecoDesc", azienda.AtecoDescription);
+            cmd.Parameters.AddWithValue("@year", azienda.Year);
+            cmd.Parameters.AddWithValue("@revenue", azienda.Revenue);
 
             await cmd.ExecuteNonQueryAsync();
         }

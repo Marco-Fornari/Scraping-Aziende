@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScraperAziende")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4abb0714df8df662061be96fa323e5393cf9a530")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9da2b6e89a891374f8134f27379d3e4c78aba292")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScraperAziende")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScraperAziende")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
