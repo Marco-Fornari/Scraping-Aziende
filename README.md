@@ -35,6 +35,7 @@ Currently included provinces:
 - **Pesaro Urbino (PU)**
 
 Endpoints used:
+- https://www.reportaziende.it/assets/json/provinceComuni/mar_an_elenco.json
 - https://www.reportaziende.it/assets/json/provinceComuni/mar_ap_elenco.json
 - https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json
 - https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json
