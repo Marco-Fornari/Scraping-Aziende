@@ -23,7 +23,9 @@ public class ReportAziendeService
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_pu_elenco.json",
-            
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_an_elenco.json"
+
+
 
         };
 
