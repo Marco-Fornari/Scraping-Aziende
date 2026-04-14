@@ -19,11 +19,11 @@ public class ReportAziendeService
     {
         var urls = new List<string>
         {
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_an_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_ap_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_fm_elenco.json",
             "https://www.reportaziende.it/assets/json/provinceComuni/mar_mc_elenco.json",
-            "https://www.reportaziende.it/assets/json/provinceComuni/mar_pu_elenco.json",
-            "https://www.reportaziende.it/assets/json/provinceComuni/mar_an_elenco.json"
+            "https://www.reportaziende.it/assets/json/provinceComuni/mar_pu_elenco.json"
 
 
 
@@ -47,7 +47,7 @@ public class ReportAziendeService
                     FiscalCode = item.GetProperty("fiscal_code").GetString() ?? "",
 
                     Company = item.GetProperty("name").GetString() ?? "",
-                   
+
                     Place = item.GetProperty("comune").GetString() ?? "",
                     Province = province,
 
@@ -71,7 +71,17 @@ public class ReportAziendeService
         foreach (var azienda in aziende)
         {
             var cmd = new MySqlCommand(
-                  "INSERT INTO totCompanies (vatNumber, fiscalCode, company, place, province, atecoCode, atecoDescription,  year, revenue) VALUES (@vat, @fiscal, @company, @place, @province, @atecoCode, @atecoDesc, @year, @revenue)",
+                        @"INSERT INTO totCompanies (vatNumber, fiscalCode, company, place, province, atecoCode, atecoDescription, year, revenue)
+                        VALUES (@vat, @fiscal, @company, @place, @province, @atecoCode, @atecoDesc, @year, @revenue)
+                        ON DUPLICATE KEY UPDATE
+                          fiscalCode = VALUES(fiscalCode),
+                          company = VALUES(company),
+                          place = VALUES(place),
+                          province = VALUES(province),
+                          atecoCode = VALUES(atecoCode),
+                          atecoDescription = VALUES(atecoDescription),
+                          year = VALUES(year),
+                          revenue = VALUES(revenue)",
                 conn);
 
             cmd.Parameters.AddWithValue("@vat", azienda.VatNumber);
